@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RCTimer</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="Chart.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="timer-wrapper">
+        <p id="timer">00:00.000</p>
+        <a href="javascript:null" draggable="false" class="open special_button" onclick="swapDisplay()"></a>
+    </div>
+    <div id="stats">
+        <table id="algo-wrapper">
+            <tr>
+                <td>
+                    <div id="the_head" class="special_box">
+                        <h1>RCTimer</h1>
+                        <hr>
+                        <p>Version: 1.0</p> 
+                        <a href="javascript:null" onclick="$('#algorithm').text(scramble(20))" style="text-decoration: none; color: orange;">New Scramble</a>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div id="algo" class="special_box">
+                        <p id="algo-text">
+                            <span id="algorithm">
+                                <script>
+                                    document.write(scramble(20));
+                                </script>
+                            </span>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+        <div id="stat-table" class="special_box">
+            <h1>Times</h1>
+            <hr>
+            <div id="nested">
+                <table id="true-table" cellspacing="0">
+                </table>
+            </div>
+        </div>
+        <a href="javascript:null" draggable="false" class="close special_button" onclick="swapDisplay()"></a>
+        <div id="chart-wrapper">
+            <canvas id="chart" style='width: 900px!important; height: 600px!important'> If you are seeing this text,
+                that is because Canvas is not supported in your browser.</canvas>
+        </div>
+    </div>
+</body>
+
+</html>

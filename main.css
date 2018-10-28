@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Mali:200,300,400,500,600,700');
+body {
+    background-color: crimson;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Mali, cursive;
+    font-weight: 100;
+}
+
+#timer {
+    color: white;
+    width: 50%;
+    height: 100px;
+    text-align: center;
+    font-size: 100px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#timer-wrapper {
+    display: none;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#stats {
+    display: block;
+    background-color: #222;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.special_button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    opacity: 0.5;
+    font-size: 58px;
+    text-decoration: none;
+    width: 58px;
+    height: 58px;
+    text-align: center;
+}
+
+.special_button:hover {
+    opacity: 1;
+}
+
+.special_button:before {
+    transform: rotate(45deg);
+    content: '\026AA';
+    color: #fff;
+    font-weight: 100;
+    vertical-align: top;
+    text-align: center;
+    margin: 0;
+    height: 58px !important;
+    width: 58px !important;
+    background-size: 58px 58px;
+}
+
+.special_box {
+    font-weight: lighter;
+    background-color: #333;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 20vh;
+    width: 200px;
+    margin: 30px;
+    text-align: center;
+}
+
+#stat-table {
+    height: 70vh;
+    overflow: hidden;
+}
+
+#the_head {
+    padding: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+#true-table {
+    position: relative;
+    width: 200px;
+    margin: 0;
+}
+
+.solve-count {
+    border-right: 1px solid white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#nested {
+    width: 100%;
+    height: 88%;
+    overflow: auto;
+    padding-right: 17px;
+    overflow-x: hidden;
+}
+
+#true-table {
+    margin-bottom: 15px;
+}
+
+hr {
+    margin: 0;
+}
+
+.delete-it {
+    text-decoration: none !important;
+    color: white;
+
+}
+
+#algo {
+    width: 600px;
+    height: 50px;
+    padding: 0;
+}
+
+#algo-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+#chart-wrapper {
+    position: absolute;
+    margin: auto;
+    right: 30px;
+    bottom: 30px;
+    height: 600px;
+    width: 900px;
+}
