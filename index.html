@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body onresize="update()">
     <div id="timer-wrapper">
         <p id="timer">00:00.000</p>
         <a href="javascript:null" draggable="false" class="open special_button" onclick="swapDisplay()"></a>
@@ -23,9 +23,8 @@
                 <td>
                     <div id="the_head" class="special_box">
                         <h1>RCTimer</h1>
-                        <hr>
-                        <p>Version: 1.0</p> 
-                        <a href="javascript:null" onclick="$('#algorithm').text(scramble(20))" style="text-decoration: none; color: orange;">New Scramble</a>
+                        <br/>
+                        <a display="block" href="javascript:null" onclick="$('#algorithm').text(scramble(20))" style="text-decoration: none; color: orange;">New Scramble</a>
                     </div>
                 </td>
                 <td valign="top">
@@ -53,7 +52,7 @@
         </div>
         <a href="javascript:null" draggable="false" class="close special_button" onclick="swapDisplay()"></a>
         <div id="chart-wrapper">
-            <canvas id="chart" style='width: 900px!important; height: 600px!important'> If you are seeing this text,
+            <canvas id="chart"> If you are seeing this text,
                 that is because Canvas is not supported in your browser.</canvas>
         </div>
     </div>

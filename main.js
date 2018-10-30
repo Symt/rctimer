@@ -35,6 +35,11 @@ $(document).ready(() => {
     });
 });
 
+function update() {
+    $("canvas").attr("width", $("canvas").css("width"));
+    $("canvas").attr("height", $("canvas").css("height"));
+}
+
 function pad(number, width) {
     width -= number.toString().length;
     if (width > 0) {

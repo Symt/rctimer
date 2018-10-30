@@ -148,8 +148,11 @@ hr {
 #chart-wrapper {
     position: absolute;
     margin: auto;
-    right: 30px;
-    bottom: 30px;
-    height: 600px;
-    width: 900px;
+    right: 15px;
+    bottom: 15px;
+}
+
+canvas {
+    width: calc(100vw - 300px)!important;
+    height: calc(100vh - 200px)!important;
 }
