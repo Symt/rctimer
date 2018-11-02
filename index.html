@@ -8,7 +8,10 @@
     <title>RCTimer</title>
     <script src="jquery-3.3.1.min.js"></script>
     <script src="Chart.min.js"></script>
+    <script src="scramble.js"></script>
+    <script src="scramble-333.js"></script>
     <script src="main.js"></script>
+    
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -24,16 +27,14 @@
                     <div id="the_head" class="special_box">
                         <h1>RCTimer</h1>
                         <br/>
-                        <a display="block" href="javascript:null" onclick="$('#algorithm').text(scramble(20))" style="text-decoration: none; color: orange;">New Scramble</a>
+                        <a display="block" href="javascript:null" onclick='$("#algorithm").text(scramblers["333"].getRandomScramble()["scramble_string"])' style="text-decoration: none; color: orange;">New Scramble</a>
                     </div>
                 </td>
                 <td valign="top">
                     <div id="algo" class="special_box">
                         <p id="algo-text">
                             <span id="algorithm">
-                                <script>
-                                    document.write(scramble(20));
-                                </script>
+                                <!-- Removal of document.write() because bad practice -->
                             </span>
                         </p>
                     </div>

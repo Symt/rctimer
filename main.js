@@ -10,17 +10,18 @@ var secTimeArray = [];
 var the_chart;
 var iterm_time = 0;
 var stop_time = 0;
+var inspection_time = 0;
+//var scramble = new scramblejs();
 $(document).ready(() => {
-    console.log("Scramble Algorithm: CUSTOM (WIP)")
-    console.log("Current Issues:\n 1. D U D & other repeats as so\n 2. D'2 D & other repeats as so (Explicit fix)\n 3. D' U D & other cancellations")
-    plot()    
-    date = new Date();
+    console.log("Scramble Algorithm: https://github.com/cubing/jsss/blob/master/scramble_333.js")
+    plot();
+    $("#algorithm").text(scramblers["333"].getRandomScramble()["scramble_string"]);
     $(document).keydown((e) => {
         date = new Date();
         interm_time = date.getTime();
         if (!going && e.which == 32 && $("#timer-wrapper").css("display") != 'none' && interm_time-stop_time >= 3000) {
             interm_time = 0;
-            $("body").css('background-color', "indianred");
+            $("body").css('background-color', "#f4425c");
             $("#timer").text("00:00.000");
             going = true;
         } else if (going && elapsed > 0 && $("#timer-wrapper").css("display") != 'none') {
@@ -105,7 +106,7 @@ function stop() {
     elapsed = 0;
     timeArray[rowCounter - 1] = $("#timer").text();
     rowCounter++;
-    $("#algo-text").text(scramble(20));
+    $("#algo-text").text(scramblers["333"].getRandomScramble()["scramble_string"]);
     plot();
 }
 
@@ -214,36 +215,4 @@ function remove(arr) {
         }
     }
     return arr;
-}
-
-function scramble(len) {
-    var options = ['L', 'R', 'U', 'D', 'B', 'F'];
-    var algo = [];
-    while (algo.length < len) {
-        if (algo.length == 0) {
-            algo[0] = options[Math.floor(Math.random() * options.length)];
-        } else {
-            algo[algo.length] = options[Math.floor(Math.random() * options.length)] + ((Math.floor(Math.random()*2) == 1) ? "'" : "");
-            if (algo[algo.length - 1].substr(algo[algo.length - 1].length - 1) == "'" && algo[algo.length - 1].substr(0,algo[algo.length-1].length-1) == algo[algo.length - 2]) {
-                algo.pop();
-                algo.pop();
-            } else if (algo[algo.length - 2].substr(algo[algo.length - 2].length - 1) == "'" && algo[algo.length - 1] == algo[algo.length - 2].substr(0, algo[algo.length - 2].length - 1)) {
-                algo.pop();
-                algo.pop();
-            } else if (algo[algo.length - 1] == algo[algo.length - 2].substr(0, 1) && algo[algo.length - 2].length == 2) {
-                algo.pop();
-            } else if (algo[algo.length - 1] == algo[algo.length - 2]) {
-                algo[algo.length - 2] += "2";
-                algo.pop();
-            }
-            if (algo.length != 0 && algo[algo.length - 1] != algo[algo.length - 1].replace(/[RLUDBF]'2/i)) {
-                algo[algo.length - 1] = algo[algo.length-1].substr(0,1) + algo[algo.length-1].substr(2);
-            }
-        }
-    }
-    var result = "";
-    algo.forEach((item, index) => {
-        result += item + " ";
-    })
-    return result;
 }
